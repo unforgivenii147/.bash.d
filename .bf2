@@ -1,0 +1,15 @@
+#!/bin/sh
+
+gpp() {
+	g++ -std=c++17 -Wall -Wextra -O2 -fPIE -pie "$@" -o out
+}
+
+tcc() {
+
+    echo "copy file content to clipboard using termux-api"
+    FNAME="$@"
+    cat "${FNAME}" | termux-clipboard-set
+    echo "done"
+
+}
+
