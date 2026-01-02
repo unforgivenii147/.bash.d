@@ -1,0 +1,2 @@
+alias gcli="gemini-cli --token AIzaSyACEFaXYM4EslsNvOCoiFDl2tg-7kpxMdI"
+alias git1="git clone  --depth 1 --single-branch --branch main "

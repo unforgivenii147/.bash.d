@@ -10,6 +10,5 @@ tcc() {
     FNAME="$@"
     cat "${FNAME}" | termux-clipboard-set
     echo "done"
-
 }
 

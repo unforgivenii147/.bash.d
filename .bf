@@ -125,7 +125,7 @@ ex_tar() {
   for f in *; do bash -c "cd $f && tar -xzvf *.tar.gz"; done
 }
 
-zz7() {
+7zza() {
   local name="$(basename "$PWD")"
   local archive="../${name}.7z"
 
@@ -150,7 +150,7 @@ zz7() {
   echo "✅ Done: created '$archive' and removed '$name/'"
 }
 
-z7er() {
+7zaa() {
   7z a -mx9 "../$(basename "$PWD").7z" "../$(basename "$PWD")"
 }
 stree() {
@@ -193,7 +193,7 @@ mkdr() {
   mkdir -p "$@" && cd "$_"
 }
 
-lj() {
+ljj() {
   ls -la | awk 'NR>1 && !/^d/ {printf "%s %.2f MB\n", $9, $5/1024/1024}'
 }
 
@@ -256,16 +256,17 @@ pynew() {
 #!/usr/bin/env python3
 
 import sys
-import dh
+from time import perf_counter
+
+
 
 def main():
-    dir='.'
-    filez=[]
-    files=dh.get_files(dir)
-    for f in files:
-        if dh.get_ext(f)=='':
-            filez.append(f)
+    start=perf_counter()
 
+
+
+
+    print(f'{perf_counter()-start} sec')
 
 if __name__ == "__main__":
     sys.exit(main())
@@ -439,7 +440,7 @@ dowhl() {
   for f in *; do bash -c "cd $f && unzip *.whl && rm -v *.whl"; done
 }
 dowhl2() {
-  for f in *; do bash -c "cd $f && ww && rm -rf *"; done
+  for f in *; do bash -c "cd $f && 7z x *.body && rm -rf *.body"; done
 }
 
 pipallwhl() {
