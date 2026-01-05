@@ -186,27 +186,15 @@ pss() {
   grep "$@" "$ff"
 }
 
-mdr() {
+md() {
   mkdir -p "$@" && cd "$_"
 }
-mkdr() {
+mkr() {
   mkdir -p "$@" && cd "$_"
 }
 
 ljj() {
   ls -la | awk 'NR>1 && !/^d/ {printf "%s %.2f MB\n", $9, $5/1024/1024}'
-}
-
-# Function to list files and directories with human-readable sizes
-
-rmaa() {
-  read -p "Are you sure you want to delete all files except .git? [y/N]: " yn
-  if [[ "$yn" == "y" || "$yn" == "Y" ]]; then
-    find . -mindepth 1 -not -name '.git' -not -path './.git/*' -exec rm -rf {} +
-    echo "All files except .git deleted."
-  else
-    echo "Aborted."
-  fi
 }
 
 # --------- C++ Programming Shortcuts ---------

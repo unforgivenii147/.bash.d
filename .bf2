@@ -12,3 +12,13 @@ tcc() {
     echo "done"
 }
 
+dir(){
+    ls -F --color=auto  -lF --color=always  "$@" | less -r
+}
+
+g11() {
+    gh repo clone "$@" -- --depth 1 --single-branch --branch master
+}
+g12() {
+    gh repo clone "$@" -- --depth 1 --single-branch --branch main
+}
